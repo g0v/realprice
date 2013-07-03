@@ -3,5 +3,5 @@ h1 成交均價(萬)
   button.btn.btn-primary(type="button",ng-model="aggregate",btn-radio="'price'") 成交價
   button.btn.btn-primary(type="button",ng-model="aggregate",btn-radio="'unitprice'") 單價
 
-.leaflet(class="aggregate-{{aggregate}}")
-  leaflet(center="center",markers="markers",defaults="defaults",width="800",height="600",testing="testing")
+.leaflet(class="aggregate-{{aggregate}}",resize)
+  leaflet(center="center",markers="markers",defaults="defaults",ng-style='{width:$parent.width,height:$parent.contentHeight}',height="800",testing="testing")

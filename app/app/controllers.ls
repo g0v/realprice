@@ -64,3 +64,15 @@ angular.module 'app.controllers' <[ui.state leaflet-directive]>
 
   map.addLayer markers
 
+.directive 'resize' <[$window]> ++ ($window) ->
+  (scope, element, attrs) ->
+    refresh-size = ->
+      scope.width = $window.innerWidth
+      scope.height = $window.innerHeight
+      scope.content-height = $window.innerHeight - $ element .offset!top
+
+    angular.element $window .bind 'resize' ->
+      scope.$apply refresh-size
+      scope.$apply refresh-size
+
+    refresh-size!
