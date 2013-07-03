@@ -8,7 +8,9 @@ html(lang='en')
     meta(name='author', content='')
     title(ng-bind='$state.current.name') hackfoldr
     link(rel='stylesheet', href='/css/app.css')
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6/leaflet.css')
+    link(rel='stylesheet', href='//cdn.leafletjs.com/leaflet-0.6.2/leaflet.css')
+    //if lte IE 8
+      link(rel='stylesheet', href='//cdn.leafletjs.com/leaflet-0.6.2/leaflet.ie.css')
     base(href="/")
 
     script.
@@ -23,6 +25,7 @@ html(lang='en')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6/leaflet.js')
+    script(src='//cdn.leafletjs.com/leaflet-0.6.2/leaflet.js')
     script(src='/js/vendor.js')
     script(src='/js/partials.js')
     script(src='/js/app.js')
