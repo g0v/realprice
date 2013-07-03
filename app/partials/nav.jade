@@ -1,0 +1,7 @@
+ul.nav
+  li
+    a(ng-href='/') Home
+
+ul.nav.pull-right
+  li(ng-class="{ active: $state.includes('about') }")
+    a(ng-href='/about') About
