@@ -11,6 +11,7 @@ angular.module \app <[ui partials app.controllers ui.state ui.bootstrap]>
     .state 'home' do
       url: '/'
       templateUrl: '/partials/home.html'
+      controller: \Home
 
   $urlRouterProvider
     .otherwise('/')
