@@ -17,6 +17,7 @@ angular.module 'app.controllers' <[ui.state leaflet-directive]>
 .controller Home: <[$scope $http]> ++ ($scope, $http) ->
   $scope <<< do
     markers: {}
+    aggregate: 'price'
     defaults: do
       maxZoom: 17
       tileLayer: 'http://{s}.tile.cloudmade.com/ae2dc46faa384973b408b2467d727490/998/256/{z}/{x}/{y}.png'
@@ -35,6 +36,7 @@ angular.module 'app.controllers' <[ui.state leaflet-directive]>
       childCount = cluster.getChildCount();
       children = cluster.getAllChildMarkers!
       avg = (children.map (.options.price) .reduce (+)) / childCount
+      unitavg = (children.map (.options.unitprice) .reduce (+)) / childCount
 
       c = ' marker-cluster-';
       if childCount < 10
@@ -45,8 +47,9 @@ angular.module 'app.controllers' <[ui.state leaflet-directive]>
         c += 'large';
 
       avg = Math.round(avg / 10000)
+      unitavg = Math.round(unitavg / 10000)
       new L.DivIcon do
-        html: '<div><span>' + avg + '</span></div>'
+        html: """<div class="aggregate-marker"><span class="price">#avg</span><span class="unitprice">#unitavg</span></div>"""
         className: 'marker-cluster' + c,
         iconSize: new L.Point(40, 40)
   markerList = []
