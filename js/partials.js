@@ -5,7 +5,7 @@ angular.module('partials', [])
 }])
 .run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/home.html', [
-'<h1>成交均價(萬)</h1><div class="btn-group"><button type="button" ng-model="aggregate" btn-radio="\'price\'" class="btn btn-primary">成交價</button><button type="button" ng-model="aggregate" btn-radio="\'unitprice\'" class="btn btn-primary">單價</button></div><div resize="resize" class="leaflet aggregate-{{aggregate}}"><leaflet center="center" markers="markers" defaults="defaults" ng-style="{width:$parent.width,height:$parent.contentHeight}" height="800" testing="testing"></leaflet></div>',''].join("\n"));
+'<h1>成交均價(萬)</h1><div class="btn-group"><a ng-model="aggregate" btn-radio="\'price\'" class="btn">成交價</a><a ng-model="aggregate" btn-radio="\'unitprice\'" class="btn">單價</a></div><div resize="resize" class="leaflet aggregate-{{aggregate}}"><leaflet center="center" markers="markers" defaults="defaults" ng-style="{width:$parent.width,height:$parent.contentHeight}" height="800" testing="testing"></leaflet></div>',''].join("\n"));
 }])
 .run(['$templateCache', function($templateCache) {
   return $templateCache.put('/partials/nav.html', [
